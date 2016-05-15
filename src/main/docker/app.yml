@@ -1,0 +1,21 @@
+version: '2'
+services:
+    notification-app:
+        image: notification
+        external_links:
+            - notification-mysql:mysql
+            - notification-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/notification?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+        ports:
+            - 8080:8080
+    notification-mysql:
+        extends:
+            file: mysql.yml
+            service: notification-mysql
+    notification-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: notification-elasticsearch
