@@ -5,6 +5,14 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515093642_added_entity_NotificationChannel.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515093643_added_entity_NotificationTemplate.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515093644_added_entity_NotificationEvent.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515093645_added_entity_NotificationNotifieeType.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515093646_added_entity_Organization.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515093647_added_entity_NotificationEventReminder.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160515093643_added_entity_constraints_NotificationTemplate.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160515093647_added_entity_constraints_NotificationEventReminder.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

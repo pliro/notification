@@ -1,0 +1,55 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "notificationChannel",
+      "otherEntityName": "notificationChannel",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "notificationEvent",
+      "otherEntityName": "notificationEvent",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "notificationNotifieeType",
+      "otherEntityName": "notificationNotifieeType",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "organization",
+      "otherEntityName": "organization",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "notificationEventReminderId",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "notificationEventReminderDateTime",
+      "javadoc": "The number of milliseconds before the appointment when the notificationshould be sent.",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160515093647",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no"
+}

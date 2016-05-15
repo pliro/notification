@@ -1,0 +1,43 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "template",
+      "otherEntityName": "notificationTemplate",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "organization"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "reminder",
+      "otherEntityName": "notificationEventReminder",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "organization"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "organizationId",
+      "javadoc": "UUID - business idIdentifies this organization across multiple systems",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "organizationName",
+      "javadoc": "Name used for the organization",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160515093646",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "javadoc": "A formally or informally recognized grouping of people or organizationsformed for the purpose of achieving some form of collective action.Includes companies, institutions, corporations, departments,community groups, healthcare practice groups, etc."
+}

@@ -1,0 +1,44 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "template",
+      "otherEntityName": "notificationTemplate",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "notificationChannel"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "reminder",
+      "otherEntityName": "notificationEventReminder",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "notificationChannel"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "notificationChannelId",
+      "javadoc": "UUID - business idA unique idd of the notification channel",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "notificationChannelName",
+      "javadoc": "Name of the channel",
+      "fieldType": "NotificationChannelName",
+      "fieldValues": "SMS,EMAIL",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160515093642",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "javadoc": "A channel through which a participant can be notified"
+}

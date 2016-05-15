@@ -1,0 +1,22 @@
+
+<div>
+    <h2><span>Organization</span> {{vm.organization.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Organization Id</span></dt>
+        <dd>
+            <span>{{vm.organization.organizationId}}</span>
+        </dd>
+        <dt><span>Organization Name</span></dt>
+        <dd>
+            <span>{{vm.organization.organizationName}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

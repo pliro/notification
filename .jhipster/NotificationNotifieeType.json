@@ -1,0 +1,43 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "template",
+      "otherEntityName": "notificationTemplate",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "notificationNotifieeType"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "reminder",
+      "otherEntityName": "notificationEventReminder",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "notificationNotifieeType"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "notificationNotifieeTypeId",
+      "javadoc": "UUID - business id",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "notificationNotifieeTypeName",
+      "fieldType": "NotificationNotifieeTypeName",
+      "fieldValues": "PATIENT,DOCTOR,HEALTHCENTERMANAGER",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160515093645",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "javadoc": "The type of the notifiee; which is reciepent of the notification."
+}

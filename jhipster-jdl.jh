@@ -1,0 +1,142 @@
+/**
+* A channel through which a participant can be notified
+*/
+entity NotificationChannel {
+	/**
+    * UUID - business id
+    * A unique idd of the notification channel
+    */
+	notificationChannelId String required,
+    /**
+    * Name of the channel
+    */
+    notificationChannelName NotificationChannelName required
+}
+
+enum NotificationChannelName {
+	SMS, EMAIL
+}
+
+/**
+* A notification template 
+*/
+entity NotificationTemplate {
+	/**
+    * UUID - business id
+    */
+	notificationTemplateId String required,
+    /**
+    * Template to be filled at runtime
+    */
+    notificationTemplate String required
+}
+
+relationship OneToMany {
+	/**
+	* A channel will have multiple templates
+	*/
+	NotificationChannel{template} to NotificationTemplate
+}
+
+/**
+* An event on which the notification should be sent
+*/
+entity NotificationEvent {
+	/**
+    * UUID - business id
+    */
+	notificationEventId String required,
+    notificationEventName NotificationEventName required
+}
+
+enum NotificationEventName {
+	APPOINTEMENT_CONFIRMED, APPOINTMENT_CANCELLED
+}
+
+relationship OneToMany {
+	/**
+	* A notification event will have multiple templates
+	*/
+	NotificationEvent{template} to NotificationTemplate
+}
+
+/**
+* The type of the notifiee; which is reciepent of the notification.
+*/
+entity NotificationNotifieeType {
+	/**
+    * UUID - business id
+    */
+	notificationNotifieeTypeId String required,
+    notificationNotifieeTypeName NotificationNotifieeTypeName required
+} 
+
+enum NotificationNotifieeTypeName {
+	PATIENT, DOCTOR, HEALTHCENTERMANAGER
+}
+
+relationship OneToMany {
+	/**
+	* A notification notifiee type will have multiple templates
+	*/
+	NotificationNotifieeType{template} to NotificationTemplate	
+}
+
+/*
+* A formally or informally recognized grouping of people or organizations 
+* formed for the purpose of achieving some form of collective action. 
+* Includes companies, institutions, corporations, departments, 
+* community groups, healthcare practice groups, etc.
+*/
+entity Organization {
+	/**
+    * UUID - business id
+    * Identifies this organization across multiple systems
+    */	
+    organizationId String required,
+    /**
+    * Name used for the organization
+    */
+    organizationName String required
+}
+
+relationship OneToMany {
+	/**
+	* A organization will have multiple templates
+	*/
+	Organization{template} to NotificationTemplate	
+}
+
+entity NotificationEventReminder {
+	notificationEventReminderId String required,
+    /**
+    * The number of milliseconds before the appointment when the notification
+    * should be sent.
+    */
+    notificationEventReminderDateTime Long required    
+}
+
+relationship OneToMany { 
+	NotificationChannel{reminder} to NotificationEventReminder
+}
+
+relationship OneToMany { 
+	NotificationNotifieeType{reminder} to NotificationEventReminder
+}
+
+relationship OneToMany { 
+	Organization{reminder} to NotificationEventReminder
+}
+
+relationship OneToMany { 
+	NotificationEvent{reminder} to NotificationEventReminder
+}
+
+paginate NotificationChannel, NotificationTemplate, NotificationEvent, NotificationNotifieeType, Organization with infinite-scroll
+paginate NotificationEventReminder with infinite-scroll
+
+/**
+* HOW TO HANDLE: 
+* sending reminder in morning every day?
+* SEND SUMMARY or IDIVIDUAL
+*/

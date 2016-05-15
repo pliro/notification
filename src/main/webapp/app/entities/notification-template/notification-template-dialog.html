@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myNotificationTemplateLabel">Create or edit a Notification Template</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.notificationTemplate.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.notificationTemplate.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_notificationTemplateId">Notification Template Id</label>
+            <input type="text" class="form-control" name="notificationTemplateId" id="field_notificationTemplateId"
+                    ng-model="vm.notificationTemplate.notificationTemplateId"
+                    required />
+            <div ng-show="editForm.notificationTemplateId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.notificationTemplateId.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_notificationTemplate">Notification Template</label>
+            <input type="text" class="form-control" name="notificationTemplate" id="field_notificationTemplate"
+                    ng-model="vm.notificationTemplate.notificationTemplate"
+                    required />
+            <div ng-show="editForm.notificationTemplate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.notificationTemplate.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_notificationChannel">Notification Channel</label>
+            <select class="form-control" id="field_notificationChannel" name="notificationChannel" ng-model="vm.notificationTemplate.notificationChannel" ng-options="notificationChannel as notificationChannel.id for notificationChannel in vm.notificationchannels track by notificationChannel.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_notificationEvent">Notification Event</label>
+            <select class="form-control" id="field_notificationEvent" name="notificationEvent" ng-model="vm.notificationTemplate.notificationEvent" ng-options="notificationEvent as notificationEvent.id for notificationEvent in vm.notificationevents track by notificationEvent.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_notificationNotifieeType">Notification Notifiee Type</label>
+            <select class="form-control" id="field_notificationNotifieeType" name="notificationNotifieeType" ng-model="vm.notificationTemplate.notificationNotifieeType" ng-options="notificationNotifieeType as notificationNotifieeType.id for notificationNotifieeType in vm.notificationnotifieetypes track by notificationNotifieeType.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_organization">Organization</label>
+            <select class="form-control" id="field_organization" name="organization" ng-model="vm.notificationTemplate.organization" ng-options="organization as organization.id for organization in vm.organizations track by organization.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
