@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span>Notification Template</span> {{vm.notificationTemplate.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Notification Template Id</span></dt>
+        <dd>
+            <span>{{vm.notificationTemplate.notificationTemplateId}}</span>
+        </dd>
+        <dt><span>Notification Template</span></dt>
+        <dd>
+            <span>{{vm.notificationTemplate.notificationTemplate}}</span>
+        </dd>
+        <dt><span>Notification Channel</span></dt>
+        <dd>
+            <a ui-sref="notification-channel-detail({id:vm.notificationTemplate.notificationChannel.id})">{{vm.notificationTemplate.notificationChannel.id}}</a>
+        </dd>
+        <dt><span>Notification Event</span></dt>
+        <dd>
+            <a ui-sref="notification-event-detail({id:vm.notificationTemplate.notificationEvent.id})">{{vm.notificationTemplate.notificationEvent.id}}</a>
+        </dd>
+        <dt><span>Notification Notifiee Type</span></dt>
+        <dd>
+            <a ui-sref="notification-notifiee-type-detail({id:vm.notificationTemplate.notificationNotifieeType.id})">{{vm.notificationTemplate.notificationNotifieeType.id}}</a>
+        </dd>
+        <dt><span>Organization</span></dt>
+        <dd>
+            <a ui-sref="organization-detail({id:vm.notificationTemplate.organization.id})">{{vm.notificationTemplate.organization.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

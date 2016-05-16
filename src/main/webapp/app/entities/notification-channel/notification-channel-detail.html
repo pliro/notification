@@ -1,0 +1,22 @@
+
+<div>
+    <h2><span>Notification Channel</span> {{vm.notificationChannel.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Notification Channel Id</span></dt>
+        <dd>
+            <span>{{vm.notificationChannel.notificationChannelId}}</span>
+        </dd>
+        <dt><span>Notification Channel Name</span></dt>
+        <dd>
+            <span translate="{{'notificationApp.NotificationChannelName.' + vm.notificationChannel.notificationChannelName}}">{{vm.notificationChannel.notificationChannelName}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

@@ -1,0 +1,36 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "template",
+      "otherEntityName": "notificationTemplate",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "notificationEvent"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "notificationEventId",
+      "javadoc": "UUID - business id",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "notificationEventName",
+      "fieldType": "NotificationEventName",
+      "fieldValues": "APPOINTEMENT_CONFIRMED,APPOINTMENT_CANCELLED",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160516120731",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no",
+  "javadoc": "An event on which the notification should be sent"
+}

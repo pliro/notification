@@ -1,0 +1,22 @@
+
+<div>
+    <h2><span>Notification Event</span> {{vm.notificationEvent.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Notification Event Id</span></dt>
+        <dd>
+            <span>{{vm.notificationEvent.notificationEventId}}</span>
+        </dd>
+        <dt><span>Notification Event Name</span></dt>
+        <dd>
+            <span translate="{{'notificationApp.NotificationEventName.' + vm.notificationEvent.notificationEventName}}">{{vm.notificationEvent.notificationEventName}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

@@ -1,0 +1,52 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myNotificationNotifieeTypeLabel">Create or edit a Notification Notifiee Type</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.notificationNotifieeType.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.notificationNotifieeType.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_notificationNotifieeTypeId">Notification Notifiee Type Id</label>
+            <input type="text" class="form-control" name="notificationNotifieeTypeId" id="field_notificationNotifieeTypeId"
+                    ng-model="vm.notificationNotifieeType.notificationNotifieeTypeId"
+                    required />
+            <div ng-show="editForm.notificationNotifieeTypeId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.notificationNotifieeTypeId.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_notificationNotifieeTypeName">Notification Notifiee Type Name</label>
+            <select class="form-control" name="notificationNotifieeTypeName" ng-model="vm.notificationNotifieeType.notificationNotifieeTypeName" id="field_notificationNotifieeTypeName" required>
+                <option value="PATIENT">PATIENT</option>
+                <option value="DOCTOR">DOCTOR</option>
+                <option value="HEALTHCENTERMANAGER">HEALTHCENTERMANAGER</option>
+            </select>
+            <div ng-show="editForm.notificationNotifieeTypeName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.notificationNotifieeTypeName.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
